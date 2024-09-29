@@ -26,6 +26,30 @@ reg [PHASE_INC_BITS - 1 : 0] phase = {PHASE_INC_BITS{1'b0}};
 sinTable sin0(CLK, phase[PHASE_INC_BITS - 1 : PHASE_INC_BITS - 4], sin);
 cosTable cos0(CLK, phase[PHASE_INC_BITS - 1 : PHASE_INC_BITS - 4], cos);
 
+
+/*always @(posedge CLK)
+begin
+	case (phase[PHASE_INC_BITS - 1 : PHASE_INC_BITS - 2])
+		2'b00:	begin
+			sin <= 8'd127;
+			cos <= 8'd127;
+		end
+		2'b01:	begin
+			sin <= 8'd127;
+			cos <= -8'd128;
+		end
+		2'b10:	begin
+			sin <= -8'd128;
+			cos <= -8'd128;
+		end
+		2'b11:	begin
+			sin <= -8'd128;
+			cos <= 8'd127;
+		end
+	endcase
+end
+*/
+
 always @(posedge CLK)
 begin
 	if (RSTb == 1'b0) begin

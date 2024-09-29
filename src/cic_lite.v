@@ -113,7 +113,7 @@ begin
 			comb2_in_del <= comb1;
 			comb2 <= comb1 - comb2_in_del;
 
-			x_out <= comb2 >>> (WIDTH - 16 - 3 - 1);
+			x_out <= comb2[WIDTH - 1 - 3:WIDTH - 16 - 3];
 			out_tick <= 1'b1;
 		end else begin
 			out_tick <= 1'b0;

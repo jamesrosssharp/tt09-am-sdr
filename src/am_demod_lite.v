@@ -59,7 +59,7 @@ begin
 				end
 			st_start_mult_I: begin
 				state <= st_multiply_I;	
-				multA <= $signed(I_in);
+				multA <= {{9{I_in[7]}}, I_in};
 				multB <= I_in;
 				m_count <= 4'd0;
 			end
@@ -84,7 +84,7 @@ begin
 			end	
 			st_start_mult_Q: begin
 				state <= st_multiply_Q;	
-				multA <= $signed(Q_in);
+				multA <= {{9{Q_in[7]}}, Q_in};
 				multB <= Q_in;
 				m_count <= 4'd0;
 			end
@@ -167,7 +167,7 @@ begin
 					2'd0: begin
 						right <= {q,r[BITS_PLUS_2 - 1],1'b1};
 						left  <= {r[BITS_IN - 1:0],a[2*BITS_IN - 1:2*BITS_IN - 2]};
-						a     <= {a[2*BITS - 3:0],2'b00};    //left shift by 2 bits.
+						a     <= {a[2*BITS_IN - 3:0],2'b00};    //left shift by 2 bits.
 						count <= count + 1;
 					end
 					2'd1: begin
