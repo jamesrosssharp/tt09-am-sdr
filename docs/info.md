@@ -9,12 +9,19 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This is a Software Defined Radio pipeline for AM radio reception written in verilog. It works using
+an external comparator as a 1-bit ADC frontend which is oversampled and decimated 4096 times to give
+around 6 bits of precision. It is based on this [Hackaday Project](https://hackaday.io/project/170916-fpga-3-r-1-c-mw-and-sw-sdr-receiver). 
 
 ## How to test
 
-Explain how to use your project
+You need to connect an external comparator and RC network.
+
+TODO: Add circuit diagram
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+- External comparator
+- Resistor bias network
+- RC network
+- External SPI microcontroller to set station

@@ -1,25 +1,25 @@
 [*]
-[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Nov 20 16:00:28 2023
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Sep 29 03:52:05 2024
 [*]
-[dumpfile] "/home/uri/p/tt-new-template-proto/test/tb.vcd"
-[dumpfile_mtime] "Mon Nov 20 15:58:34 2023"
-[dumpfile_size] 1110
-[savefile] "/home/uri/p/tt-new-template-proto/test/tb.gtkw"
+[dumpfile] "/home/jrsharp/home_mnt/code/tt09-am-sdr/test/tb.vcd"
+[dumpfile_mtime] "Sun Sep 29 03:51:06 2024"
+[dumpfile_size] 110596670
+[savefile] "/home/jrsharp/home_mnt/code/tt09-am-sdr/test/tb.gtkw"
 [timestart] 0
-[size] 1376 600
+[size] 1920 993
 [pos] -1 -1
-*-24.534533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-28.534533 190000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
+[treeopen] tb.user_project.
+[treeopen] tb.user_project.am_sdr0.
 [sst_width] 297
-[signals_width] 230
+[signals_width] 299
 [sst_expanded] 1
-[sst_vpaned_height] 158
+[sst_vpaned_height] 300
 @28
 tb.user_project.ena
-@29
 tb.user_project.clk
-@28
 tb.user_project.rst_n
 @200
 -Inputs
@@ -33,7 +33,26 @@ tb.user_project.uio_oe[7:0]
 tb.user_project.uio_out[7:0]
 @200
 -Output Pins
-@22
+@28
 tb.user_project.uo_out[7:0]
+tb.user_project.PWM_OUT
+@8022
+tb.user_project.am_sdr0.am0.demod_out[15:0]
+@20000
+-
+-
+-
+@22
+tb.user_project.am_sdr0.spi0.phase_inc[25:0]
+@28
+tb.user_project.am_sdr0.spi0.state[1:0]
+tb.user_project.am_sdr0.spi0.SCK
+tb.user_project.am_sdr0.spi0.CS
+tb.user_project.am_sdr0.spi0.CS_q
+tb.user_project.am_sdr0.spi0.CS_qq
+tb.user_project.am_sdr0.spi0.MOSI
+tb.user_project.am_sdr0.PWM_OUT
+@23
+tb.user_project.am_sdr0.count[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

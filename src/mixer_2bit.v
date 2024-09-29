@@ -1,0 +1,67 @@
+/*
+ *	(C) 2022 J. R. Sharp
+ *
+ *	Based on https://hackaday.io/project/170916-fpga-3-r-1-c-mw-and-sw-sdr-receiver by
+ *	Alberto Garlassi
+ *
+ *	See LICENSE.txt for software license
+ */
+
+module mixer_2b #(parameter BITS = 8)
+(
+	input CLK,
+	input RSTb,
+
+	input  RF_in,
+	output reg  RF_out,
+
+	input signed [BITS - 1:0] sin_in,
+	input signed [BITS - 1:0] cos_in,
+
+	output reg signed [BITS - 1:0] I_out,
+	output reg signed [BITS - 1:0] Q_out	
+);
+
+reg RF_in_q;
+reg RF_in_qq;
+
+reg signed [BITS - 1:0] sin_q;
+reg signed [BITS - 1:0] cos_q;
+
+always @(posedge CLK)
+begin
+	if (RSTb == 1'b0) begin
+		RF_in_q <= 1'b0;
+		RF_in_qq <= 1'b0;
+		RF_out <= 1'b0;
+		sin_q <= {BITS{1'b0}};
+		cos_q <= {BITS{1'b0}};	
+	end
+	else begin
+
+		RF_in_q <= RF_in;
+		RF_in_qq <= RF_in_q;
+		RF_out <= RF_in_qq;
+		sin_q <= sin_in;
+		cos_q <= cos_in;	
+
+	end
+end
+
+always @(posedge CLK)
+begin
+
+	case (RF_in_qq)
+		1'b0: begin
+			I_out <= -cos_q;
+			Q_out <= -sin_q;
+			end
+		1'b1: begin
+			I_out <= cos_q;
+			Q_out <= sin_q;
+			end
+	endcase
+
+end
+
+endmodule
