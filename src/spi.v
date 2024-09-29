@@ -65,7 +65,7 @@ always @(posedge CLK)
 begin
     if (RSTb == 1'b0) begin
         state       <= state_idle;
-        gain        <= 3'd7;
+        gain        <= 4'd3;
         phase_inc   <= 26'h1312eb; 
 
         CS_q    <= 1'b0;
@@ -109,7 +109,7 @@ begin
             end
             state_done: begin
                 phase_inc <= shift_reg[25:0];
-                gain      <= shift_reg[28:26];
+                gain      <= shift_reg[29:26];
                 state <= state_idle;
             end
             default:

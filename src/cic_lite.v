@@ -71,11 +71,11 @@ begin
 	if (RSTb == 1'b0)
 	begin
 		integ1 <= {WIDTH{1'b0}};
-		integ2 <= {WIDTH - 2{1'b0}};
+		integ2 <= {WIDTH - 3{1'b0}};
 		count <= {COUNTER_BITS{1'b0}};
 		sample <= 1'b0;
 	end else if (in_tick == 1'b1) begin
-		integ1 <= integ1 + $signed(x_in);
+		integ1 <= integ1 + {{13{x_in[7]}}, x_in};
 		integ2 <= integ2 + integ1[WIDTH - 1 : 3];
 
 		count <= count + 1;
@@ -93,18 +93,15 @@ end
 
 reg signed [WIDTH - 1 - 3:0] comb1, comb1_in_del;
 reg signed [WIDTH - 1 - 3:0] comb2, comb2_in_del;
-reg signed [WIDTH - 1 - 3:0] comb3, comb3_in_del;
 
 always @(posedge CLK)
 begin
 	if (RSTb == 1'b0)
 	begin
-		comb1 <= {WIDTH{1'b0}};
-		comb2 <= {WIDTH{1'b0}};
-		comb3 <= {WIDTH{1'b0}};
-		comb1_in_del <= {WIDTH{1'b0}};
-		comb2_in_del <= {WIDTH{1'b0}};
-		comb3_in_del <= {WIDTH{1'b0}};
+		comb1 <= {WIDTH - 3{1'b0}};
+		comb2 <= {WIDTH - 3{1'b0}};
+		comb1_in_del <= {WIDTH - 3{1'b0}};
+		comb2_in_del <= {WIDTH - 3{1'b0}};
 		out_tick <= 1'b0;
 		x_out <= {16{1'b0}};
 	end

@@ -73,9 +73,9 @@ begin
 				begin
 					case (m_count)
 						4'd7:
-							sum = sum - multA;
+							sum <= sum - multA;
 						default:
-							sum = sum + multA;
+							sum <= sum + multA;
 					endcase
 				end
 
@@ -97,9 +97,9 @@ begin
 				begin
 					case (m_count)
 						4'd7:
-							sum = sum - multA;
+							sum <= sum - multA;
 						default:
-							sum = sum + multA;
+							sum <= sum + multA;
 					endcase
 				end
 
