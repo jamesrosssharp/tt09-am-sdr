@@ -21,7 +21,7 @@ module tt_um_jamesrosssharp_1bitam (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, ui_in[7:4]};
+  wire _unused = &{ena, ui_in[7:4], uio_in, 1'b0};
 
 /*  ui[0]: "COMP_IN"
   ui[1]: "SPI_MOSI"

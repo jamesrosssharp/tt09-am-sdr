@@ -30,7 +30,7 @@
  */
 
 module cic_lite #(	
-		parameter WIDTH = 21,	/* see notes above for register width */
+		parameter WIDTH = 20,	/* see notes above for register width */
 		parameter DECIM = 64,
 		parameter BITS  = 8,
 		parameter GAIN_BITS = 8 

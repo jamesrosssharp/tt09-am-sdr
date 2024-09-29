@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sun Sep 29 06:10:11 2024
+[*] Sun Sep 29 07:37:53 2024
 [*]
 [dumpfile] "/home/jrsharp/home_mnt/code/tt09-am-sdr/test/tb.vcd"
-[dumpfile_mtime] "Sun Sep 29 06:08:33 2024"
-[dumpfile_size] 2546967
+[dumpfile_mtime] "Sun Sep 29 07:37:20 2024"
+[dumpfile_size] 29774126
 [savefile] "/home/jrsharp/home_mnt/code/tt09-am-sdr/test/tb.gtkw"
 [timestart] 0
 [size] 1920 993
 [pos] -1 -1
-*-24.534533 8100580000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-28.534533 703000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
 [treeopen] tb.user_project.
 [treeopen] tb.user_project.am_sdr0.
@@ -36,7 +36,7 @@ tb.user_project.uio_out[7:0]
 @28
 tb.user_project.uo_out[7:0]
 tb.user_project.PWM_OUT
-@8420
+@8023
 tb.user_project.am_sdr0.am0.demod_out[15:0]
 @20000
 -
@@ -64,7 +64,7 @@ tb.user_project.am_sdr0.cic2.x_out[15:0]
 @20000
 -
 -
-@8421
+@8420
 tb.user_project.am_sdr0.cic1.x_out[15:0]
 @20000
 -

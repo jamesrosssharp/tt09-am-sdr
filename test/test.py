@@ -10,8 +10,8 @@ from cocotb.triggers import ClockCycles
 async def test_project(dut):
     dut._log.info("Start")
 
-    # Set the clock period to 10 ns (100 MHz)
-    clock = Clock(dut.clk, 10, units="ns")
+    # Set the clock period to 20 ns (50 MHz)
+    clock = Clock(dut.clk, 20, units="ns")
     cocotb.start_soon(clock.start())
 
     # Reset
@@ -33,7 +33,7 @@ async def test_project(dut):
 
     await ClockCycles(dut.clk, 10)
 
-    freq = 0x995aa | (2 << 26)
+    freq = 0x132b55 | (2 << 26)
 
     # Deassert chip select
     dut.ui_in.value = 0xe
@@ -60,7 +60,7 @@ async def test_project(dut):
     # Deassert chip select
     dut.ui_in.value = 0xe
 
-    await ClockCycles(dut.clk, 500)
+    await ClockCycles(dut.clk, 200)
 
     fil = open("1bit_rf.txt")
     data = fil.readlines()
