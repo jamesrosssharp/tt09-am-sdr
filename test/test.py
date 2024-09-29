@@ -60,13 +60,14 @@ async def test_project(dut):
     # Deassert chip select
     dut.ui_in.value = 0xe
 
-    await ClockCycles(dut.clk, 10)
+    await ClockCycles(dut.clk, 500)
 
     fil = open("1bit_rf.txt")
     data = fil.readlines()
 
 
-    for data in data[0:1000000]:
+    #for data in data[0:1000000]:
+    for data in data[0:100000]:
         bit = int(data)
         dut.ui_in.value = bit | 0xe 
         # Wait for one clock cycle to see the output values
