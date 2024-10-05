@@ -140,7 +140,7 @@ always @(posedge CLK)
 begin
 	if (RSTb == 1'b0) begin
 		sqrt_state <= 2'd0;
-		demod_out <= {BITS_IN{1'b0}};
+		demod_out <= {BITS{1'b0}};
 		out_tick <= 1'b0;
 	end else begin
 
@@ -185,6 +185,8 @@ begin
 						if (count2 == 4'd7)
 							sqrt_state <= sqrt_state + 1;
 					end
+					default:
+						count <= 2'd0;
 				endcase	
 
 			end

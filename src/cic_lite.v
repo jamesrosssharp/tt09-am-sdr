@@ -32,8 +32,7 @@
 module cic_lite #(	
 		parameter WIDTH = 26,	/* see notes above for register width */
 		parameter DECIM = 64,
-		parameter BITS  = 8,
-		parameter GAIN_BITS = 8 
+		parameter BITS  = 8
 )
 (
 	input CLK,
