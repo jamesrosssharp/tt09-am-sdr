@@ -11,7 +11,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 This is a Software Defined Radio pipeline for AM radio reception written in verilog. It works using
 an external comparator as a 1-bit ADC frontend which is oversampled and decimated 4096 times to give
-around 6 bits of precision. It is based on this [Hackaday Project](https://hackaday.io/project/170916-fpga-3-r-1-c-mw-and-sw-sdr-receiver). 
+an extra 6 bits of precision. It is based on this Hackaday Project: [https://hackaday.io/project/170916-fpga-3-r-1-c-mw-and-sw-sdr-receiver](https://hackaday.io/project/170916-fpga-3-r-1-c-mw-and-sw-sdr-receiver) by Alberto Garlassi. 
 
 This is a fully digital core, but there are plans to make an analog frontend circuit as an analog design in future Tiny Tapeouts, so both designs would be hooked up together to create a radio with few external components.
 
@@ -52,10 +52,11 @@ E.g., for 936kHz (ABC Radio national Hobart) at 50MHz clock frequency, it would 
 
 ## External hardware
 
+![Alt text](schematic.png "the schematic for the external circuitry")
+
 - External comparator
 - Resistor bias network
 - RC network
 - External SPI microcontroller to set station
 - RF amplifier
 
-![Alt text](schematic.png "the schematic for the external circuitry")
